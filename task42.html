@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <h2>Stored Name</h2>
+<p id="storedname"></p>
+
+<script>
+document.addEventListener(function() {
+    const name = sessionStorage.getItem("name");
+    if (name) {
+        document.querySelector("#storedname").innerText = "Stored session name: " + name;
+    } else {
+        document.querySelector("#storedname").innerText = "No session name stored.";
+    }
+});
+
+</script>
+
+
+</body>
+</html>

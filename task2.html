@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="button" value="backword" onclick="forward()">
+    <input type="button" value="forward" onclick="back()">
+    <input type="button" value="go" onclick="go()">
+
+
+    <script>
+
+
+function forward()
+{
+  window.history.forward("Task1-Day1-10kcoders.html","_self")
+}
+    
+function back()
+{
+    window.open("Task2-Day1-10kcoders.html","_self")
+}
+function go()
+{
+    window.open("Task2-Day1-10kcoders.html","_self",-2)
+}
+
+
+   
+
+
+    </script>
+</body>
+</html>

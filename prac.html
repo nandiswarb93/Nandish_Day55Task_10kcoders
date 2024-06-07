@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage Example</title>
+</head>
+<body>
+    <h1>Session Storage Example</h1>
+    <input type="text" id="sessionName" placeholder="Enter your session name">
+    <button id="saveSessionName">Save Session Name</button>
+    <button id="showSessionName">Show Session Name</button>
+    <button id="removeSessionName">Remove Session Name</button>
+    <button id="clearSessionStorage">Clear Session Storage</button>
+    <p id="displaySessionName"></p>
+    <script>
+        document.querySelector("#saveSessionName").onclick = function() {
+            const name = document.querySelector("#sessionName").value;
+            sessionStorage.setItem("sessionName", name);
+        }
+        document.querySelector("#showSessionName").onclick = function() {
+            const name = sessionStorage.getItem("sessionName");
+            if (name) {
+                document.querySelector("#displaySessionName").innerText = "Stored Session Name: " + name;
+            } else {
+                document.querySelector("#displaySessionName").innerText = "No session name stored.";
+            }
+        }
+        document.querySelector("#removeSessionName").onclick = function() {
+            sessionStorage.removeItem("sessionName");
+            document.querySelector("#displaySessionName").innerText = "Session name removed.";
+        }
+        document.querySelector("#clearSessionStorage").onclick = function() {
+            sessionStorage.clear();
+            document.querySelector("#displaySessionName").innerText = "Session storage cleared.";
+        }
+    </script>
+</body>
+</html>

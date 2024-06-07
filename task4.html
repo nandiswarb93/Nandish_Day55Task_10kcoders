@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Session Storage</h2>
+<input type="text" id="entername" placeholder="Enter your session name">
+<button id="showname">Show Name</button>
+<button id="savename">Save Name</button>
+<button id="removename">Remove Name</button>
+<button id="clearname">Clear Storage</button>
+<p id="displayname"></p>
+    
+<script>
+document.querySelector("#savename").onclick = function() {
+    const name = document.querySelector("#entername").value;
+    sessionStorage.setItem("name", name);
+}
+
+document.querySelector("#showname").onclick = function() {
+    const name = sessionStorage.getItem("name");
+    if (name) {
+        window.open("task42.html", "_blank");
+    } else {
+        document.querySelector("#displayname").innerText = "No session name stored.";
+    }
+}
+
+document.querySelector("#removename").onclick = function() {
+    sessionStorage.removeItem("name");
+    document.querySelector("#displayname").innerText = "Session name removed.";
+}
+
+document.querySelector("#clearname").onclick = function() {
+    sessionStorage.clear();
+    document.querySelector("#displayname").innerText = "Session storage cleared.";
+}
+
+
+</script>
+</body>
+</html>
